@@ -29,4 +29,20 @@ public class PayCircuitController {
 
         return "Hello, circuit! inputId: " + id + "\t" + IdUtil.simpleUUID();
     }
+
+    @GetMapping(value = "/pay/bulkhead/{id}")
+    public String myBulkhead(@PathVariable("id") Integer id) {
+        if (id == -4) {
+            throw new RuntimeException("-----bulkhead id 不能为-4");
+        }
+
+        if (id == 9999) {
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+            	e.printStackTrace();
+            }
+        }
+        return "Hello, bulkhead! InputId: " + "id" + " \t" + IdUtil.simpleUUID();
+    }
 }
