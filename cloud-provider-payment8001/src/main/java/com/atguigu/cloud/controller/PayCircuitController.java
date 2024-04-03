@@ -43,6 +43,6 @@ public class PayCircuitController {
             	e.printStackTrace();
             }
         }
-        return "Hello, bulkhead! InputId: " + "id" + " \t" + IdUtil.simpleUUID();
+        return "Hello, bulkhead! InputId: " + id + " \t" + IdUtil.simpleUUID();
     }
 }
