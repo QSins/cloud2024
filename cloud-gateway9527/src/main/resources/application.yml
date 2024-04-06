@@ -23,7 +23,11 @@ spring:
 #            - Between=
 #              2024-04-05T12:21:09.901804100+08:00[Asia/Shanghai],
 #              2024-04-05T12:26:09.901804100+08:00[Asia/Shanghai]
-            - Cookie=username,qsx
+#            - Cookie=username,qsx
+#            - Header=X-Request-ID,\d+ # 请求头要有X-Request-Id属性并且值为整数的正则表达式
+#            - Host=**.atguigu.com
+#            - Query=username,\d+ # 要有参数名username并且值还要是整数才能路由
+            - RemoteAddr=192.168.0.1/24
 
         - id: pay_routh2 #pay_routh2                #路由的ID(类似mysql主键ID)，没有固定规则但要求唯一，建议配合服务名
 #          uri: http://localhost:8001                #匹配后提供服务的路由地址
