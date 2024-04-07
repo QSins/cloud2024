@@ -17,6 +17,6 @@ public class NacosConfigClientController {
 
     @GetMapping(value = "/config/info")
     public String getConfigInfo() {
-        return configInfo;
+        return configInfo + System.currentTimeMillis();
     }
 }
