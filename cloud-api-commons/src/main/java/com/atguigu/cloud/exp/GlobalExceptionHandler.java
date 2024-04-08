@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @Date：2024/3/25 14:11
  */
 @Slf4j
-@RestControllerAdvice
+//@RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
