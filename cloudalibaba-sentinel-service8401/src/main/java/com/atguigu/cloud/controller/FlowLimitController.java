@@ -60,4 +60,15 @@ public class FlowLimitController {
         return "----测试:新增熔断规则-慢调用比例 ";
     }
 
+    /**
+     * 新增熔断规则-异常比例
+     * @return
+     */
+    @GetMapping(value = "/testG")
+    public String testG() {
+        System.out.println("----测试:新增熔断规则-异常比例 ");
+        int result = 10 / 0;
+        return "------testG,新增熔断规则-异常比例 ";
+    }
+
 }
