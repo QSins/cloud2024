@@ -9,9 +9,11 @@ import org.springframework.stereotype.Component;
  * @Date：2024/4/9 下午2:35
  */
 @Component
-public class PayFeignSentinelApiFallBack implements PayFeignSentinelApi {
+public class PayFeignSentinelApiFallBack implements PayFeignSentinelApi
+{
     @Override
-    public ResultData<String> getPayByOrderNo(String orderNo) {
+    public ResultData<String> getPayByOrderNo(String orderNo)
+    {
         return ResultData.fail(ReturnCodeEnum.RC500.getCode(),
                 "对方服务宕机或不可用，FallBack服务降级o(╥﹏╥)o");
     }

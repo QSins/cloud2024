@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @Date：2024/3/30 16:42
  */
 @FeignClient(value = "cloud-gateway")
-public interface PayFeignApi {
+public interface PayFeignApi
+{
 
     /**
      * 新增一条支付流水相关记录
@@ -59,7 +60,7 @@ public interface PayFeignApi {
     String myCircuit(@PathVariable("id") Integer id);
 
     /**
-     *Resilience4j Bulkhead 的例子
+     * Resilience4j Bulkhead 的例子
      *
      * @param id
      * @return
@@ -78,6 +79,7 @@ public interface PayFeignApi {
 
     /**
      * Micrometer(Sleuth)进行链路监控的例子
+     *
      * @param id
      * @return
      */
@@ -95,6 +97,7 @@ public interface PayFeignApi {
 
     /**
      * GateWay进行网关测试案例02
+     *
      * @return
      */
     @GetMapping(value = "/pay/gateway/info")
