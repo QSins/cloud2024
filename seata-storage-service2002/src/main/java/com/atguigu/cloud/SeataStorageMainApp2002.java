@@ -8,16 +8,15 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @Author：qinshixin
- * @Date：2024/4/10 上午10:44
+ * @Date：2024/4/11 上午11:27
  */
 @SpringBootApplication
 @MapperScan("com.atguigu.cloud.mapper") //import tk.mybatis.spring.annotation.MapperScan;
 @EnableDiscoveryClient //服务注册和发现
 @EnableFeignClients
-public class SeataOrderMainApp2001
+public class SeataStorageMainApp2002
 {
-    public static void main(String[] args)
-    {
-        SpringApplication.run(SeataOrderMainApp2001.class,args);
+    public static void main(String[] args) {
+        SpringApplication.run(SeataStorageMainApp2002.class, args);
     }
 }

@@ -33,7 +33,7 @@ public class OrderServiceImpl implements OrderService
     private AccountFeignApi accountFeignApi;
 
     @Override
-//    @GlobalTransactional(name = "zzyy-create-order",rollbackFor = Exception.class) // AT
+    @GlobalTransactional(name = "qsx-create-order",rollbackFor = Exception.class) // AT
     // @GlobalTransactional @Transactional(rollbackFor = Exception.class) //XA
     public void createOrder(Order order)
     {
@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService
         order.setStatus(0);
         int result = orderMapper.insertSelective(order);
         //插入订单成功后获得插入mysql的实体对象
-        Order orderFromDB = null;
+        Order orderFromDB;
         if (result > 0)
         {
             orderFromDB = orderMapper.selectOne(order);

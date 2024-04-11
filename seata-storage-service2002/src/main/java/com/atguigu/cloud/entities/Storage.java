@@ -2,31 +2,23 @@ package com.atguigu.cloud.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 
 /**
- * 表名：t_order
+ * 表名：t_storage
  */
-@Table(name = "t_order")
+@Table(name = "t_storage")
 @Getter
 @Setter
-public class Order implements Serializable
+public class Storage
 {
     @Id
     @GeneratedValue(generator = "JDBC")
     private Long id;
-
-    /**
-     * 用户id
-     */
-    @Column(name = "user_id")
-    private Long userId;
 
     /**
      * 产品id
@@ -35,30 +27,29 @@ public class Order implements Serializable
     private Long productId;
 
     /**
-     * 数量
+     * 总库存
      */
-    private Integer count;
+    private Integer total;
 
     /**
-     * 金额
+     * 已用库存
      */
-    private Long money;
+    private Integer used;
 
     /**
-     * 订单状态: 0:创建中; 1:已完结
+     * 剩余库存
      */
-    private Integer status;
+    private Integer residue;
 
     @Override
     public String toString()
     {
-        return "Order{" +
+        return "Storage{" +
                 "id=" + id +
-                ", userId=" + userId +
                 ", productId=" + productId +
-                ", count=" + count +
-                ", money=" + money +
-                ", status=" + status +
+                ", total=" + total +
+                ", used=" + used +
+                ", residue=" + residue +
                 '}';
     }
 }

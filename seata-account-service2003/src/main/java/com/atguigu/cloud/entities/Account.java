@@ -2,7 +2,6 @@ package com.atguigu.cloud.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -11,13 +10,16 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
- * 表名：t_order
+ * 表名：t_account
  */
-@Table(name = "t_order")
+@Table(name = "t_account")
 @Getter
 @Setter
-public class Order implements Serializable
+public class Account implements Serializable
 {
+    /**
+     * id
+     */
     @Id
     @GeneratedValue(generator = "JDBC")
     private Long id;
@@ -29,36 +31,29 @@ public class Order implements Serializable
     private Long userId;
 
     /**
-     * 产品id
+     * 总额度
      */
-    @Column(name = "product_id")
-    private Long productId;
+    private Long total;
 
     /**
-     * 数量
+     * 已用余额
      */
-    private Integer count;
+    private Long used;
 
     /**
-     * 金额
+     * 剩余可用额度
      */
-    private Long money;
-
-    /**
-     * 订单状态: 0:创建中; 1:已完结
-     */
-    private Integer status;
+    private Long residue;
 
     @Override
     public String toString()
     {
-        return "Order{" +
+        return "Account{" +
                 "id=" + id +
                 ", userId=" + userId +
-                ", productId=" + productId +
-                ", count=" + count +
-                ", money=" + money +
-                ", status=" + status +
+                ", total=" + total +
+                ", used=" + used +
+                ", residue=" + residue +
                 '}';
     }
 }
